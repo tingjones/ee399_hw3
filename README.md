@@ -52,8 +52,7 @@ A sample of the MNIST dataset is given in Fig. 1 with their corresponding labels
 > Fig. 1. Sample images from the "MNIST" dataset
 
 ## Theoretical Background
-
-
+The three classifiers involved in this assignment are the LDA, the SVD, and the decision tree classifier. The LDA splits between data linearly, while the SVD splits data by approximating a plane through all of the features (so in this case, a 784 dimension plane) that will split the data. By having a plane through this many dimensions, the SVM also has a buffer space for where the separation line could be, and wants to maximize the distance from the line to the edge of the buffer (finding the "most middle spot" the line could be between two different classes). The decision tree classifier does not perform optimization and instead selects the principle components that best split the data and iterates downward, finding the next best feature to split the data into different classes.
 
 ## Algorithm Implementation and Development
 The procedure is discussed in this section. For the results, see [Computational Results](#computational-results).
@@ -351,7 +350,7 @@ The SVM Classifier had the greatest overall accuracy at its best and worst case 
 
 
 ## Summary and Conclusions
-Analyzing the relationship between the images of the "yalefaces" dataset was done through finding a correlation matrix of the first 100 images, of select images, and through applying the SVD on all images and extracting the first six SVD modes (or the most representative feature spaces).
+Analyzing the differences between the classifiers, each one performs best splitting between different classes. However, the SVM is computationally heavy, while the decision tree classifier gives a good representation of how to interpret the model, but has so far performed the worst of the three.
 
-Results were visualized by plotting the correlation matrix, illustrating the images with greatest and least correlation, and evaluating the SVD by calculating the percentage of variance captured by each mode, as well as visually verifying results in Fig. 10.
+Further tuning through hyperparameterization may be required for the classes to be better representative of the MNIST datasets, however they have satisfactory accuracy is splitting classes so far.
 
